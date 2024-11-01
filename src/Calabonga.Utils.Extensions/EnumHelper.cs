@@ -15,6 +15,26 @@ namespace Calabonga.Utils.Extensions
         /// <summary>
         /// Returns Enum with DisplayNames
         /// </summary>
+        public static Dictionary<T, string> GetValuesWithDisplayNamesByMask(T enumValues)
+        {
+            var list = new Dictionary<T, string>();
+            var items = GetValues(enumValues as Enum);
+
+            if (items is null)
+            {
+                return list;
+            }
+
+            foreach (var element in items)
+            {
+                list.Add(element, GetDisplayValue(element));
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Returns Enum with DisplayNames
+        /// </summary>
         public static Dictionary<T, string> GetValuesWithDisplayNames()
         {
             var type = typeof(T);
@@ -32,7 +52,38 @@ namespace Calabonga.Utils.Extensions
         /// </summary>
         public static IList<T> GetValues()
         {
-            return typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public).Select(fi => (T)Enum.Parse(typeof(T), fi.Name, false)).ToList();
+            return typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public)
+                .Select(fi => (T)Enum.Parse(typeof(T), fi.Name, false))
+                .ToList();
+        }
+
+        /// <summary>
+        /// Returns masked filter
+        /// </summary>
+        /// <param name="mask"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static IEnumerable<T> GetValues(Enum mask)
+        {
+            if (typeof(T).IsSubclassOf(typeof(Enum)) == false)
+            {
+                throw new ArgumentException();
+            }
+
+            foreach (T curValueBit in Enum.GetValues(typeof(T)).Cast<T>())
+            {
+                var value = curValueBit as Enum;
+
+                if (value is null)
+                {
+                    continue;
+                }
+
+                if (mask.HasFlag(value!))
+                {
+                    yield return curValueBit;
+                }
+            }
         }
 
         /// <summary>
