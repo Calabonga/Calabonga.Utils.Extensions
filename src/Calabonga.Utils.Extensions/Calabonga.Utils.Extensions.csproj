@@ -14,8 +14,8 @@
 	  <RepositoryUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>calabonga, extensions, helpers, enum, string, integer</PackageTags>
-	  <PackageReleaseNotes>First release</PackageReleaseNotes>
-	  <Version>1.0.1</Version>
+	  <PackageReleaseNotes>WithIndex() method created</PackageReleaseNotes>
+	  <Version>1.0.2</Version>
 	  <AssemblyVersion></AssemblyVersion>
 	  <Title>$(AssemblyName)</Title>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>

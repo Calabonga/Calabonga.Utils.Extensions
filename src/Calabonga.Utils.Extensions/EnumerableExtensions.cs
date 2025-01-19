@@ -14,9 +14,9 @@ namespace Calabonga.Utils.Extensions
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
-        /// <returns></returns>
+        /// <returns>Tuple</returns>
         [DebuggerStepThrough]
-        public static IEnumerable<(T item, int index)> WithIndex<T>(this IEnumerable<T> source)
+        public static IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> source)
                 => source.Select((item, index) => (item, index));
 
     }
