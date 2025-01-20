@@ -3,21 +3,22 @@
   <PropertyGroup>
 	  <TargetFrameworks>netstandard2.1</TargetFrameworks>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.3</Version>
+	  <PackageIconUrl>https://www.calabonga.net/images/logo.png</PackageIconUrl>
+	  <PackageProjectUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</PackageProjectUrl>
+	  <PackageTags>calabonga, extensions, helpers, enum, string, integer</PackageTags>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <Authors>Calabonga</Authors>
+	  <Copyright>Calabonga SOFT © 2023-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
 	  <Company>Calabonga SOFT</Company>
 	  <Description>Some helful extensions for C# .NET. Package contains extensions (C#) that can simplify developer life.</Description>
-	  <Copyright>Calabonga SOFT © 2023-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
-	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <PackageIconUrl></PackageIconUrl>
-	  <PackageProjectUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</PackageProjectUrl>
+	  <Product>Some helpful extensions for C#.NET</Product>
+	  <PackageId>Calabonga.Utils.Extensions</PackageId>
+	  <PackageReleaseNotes>Package metadata refatored</PackageReleaseNotes>
+	  <Title>C#.NET Extensions from Calabonga SOFT</Title>
 	  <PackageIcon>logo.png</PackageIcon>
 	  <RepositoryUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
-	  <PackageTags>calabonga, extensions, helpers, enum, string, integer</PackageTags>
-	  <PackageReleaseNotes>WithIndex() method created</PackageReleaseNotes>
-	  <Version>1.0.2</Version>
-	  <AssemblyVersion></AssemblyVersion>
-	  <Title>$(AssemblyName)</Title>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
