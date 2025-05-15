@@ -56,7 +56,11 @@ namespace Calabonga.Utils.Extensions
         {
             T convertedValue = defaultValue;
 
-            if (string.IsNullOrEmpty(target)) return convertedValue;
+            if (string.IsNullOrEmpty(target))
+            {
+                return convertedValue;
+            }
+
             try
             {
                 convertedValue = (T)Enum.Parse(typeof(T), target.Trim(), true);
@@ -97,33 +101,9 @@ namespace Calabonga.Utils.Extensions
         /// <param name="enumerable">The <see cref="IEnumerable{T}"/> to be checked.</param>
         /// <returns>True if <paramref name="enumerable"/> is null or empty, false otherwise.</returns>
         [DebuggerStepThrough]
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable)
-        {
-            return enumerable == null || !enumerable.Any();
-        }
-
-        /// <summary>
-        /// Checks whether <paramref name="enumerable"/> is null or empty.
-        /// </summary>
-        /// <typeparam name="T">The type of the <paramref name="enumerable"/>.</typeparam>
-        /// <param name="enumerable">The <see cref="IEnumerable{T}"/> to be checked.</param>
-        /// <returns>True if <paramref name="enumerable"/> is null or empty, false otherwise.</returns>
-        [DebuggerStepThrough]
         public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> enumerable)
         {
             return !enumerable.IsNullOrEmpty();
-        }
-
-        /// <summary>
-        /// Checks whether <paramref name="enumerable"/> is null or empty.
-        /// </summary>
-        /// <typeparam name="T">The type of the <paramref name="enumerable"/>.</typeparam>
-        /// <param name="enumerable">The <see cref="IEnumerable{T}"/> to be checked.</param>
-        /// <returns>True if <paramref name="enumerable"/> is null or empty, false otherwise.</returns>
-        [DebuggerStepThrough]
-        public static bool IsNullOrEmpty<T>(this string enumerable)
-        {
-            return enumerable == null || !enumerable.Any();
         }
 
         /// <summary>
@@ -134,15 +114,18 @@ namespace Calabonga.Utils.Extensions
         /// true if the source parameter is null or an empty string (""); otherwise, false
         /// </returns>
         [DebuggerStepThrough]
-        public static bool IsNotNullOrEmpty(this string source) => !IsNullOrEmpty(source);
+        public static bool IsNotNullOrEmpty(this string source)
+        {
+            return !source.IsNullOrEmpty();
+        }
 
         /// <summary>
-        /// Indicates whether the specified strings is equal (case insensitive)
+        /// Indicates whether the specified strings is equal (case-insensitive)
         /// </summary>
         /// <param name="source">Value to check</param>
         /// <param name="target">Target value</param>
         /// <returns>
-        /// true if the both parameters is empty (null or an empty string ("")) or equal (case insensitive);
+        /// true if the both parameters is empty (null or an empty string ("")) or equal (case-insensitive);
         /// otherwise, false
         /// </returns>
         [DebuggerStepThrough]

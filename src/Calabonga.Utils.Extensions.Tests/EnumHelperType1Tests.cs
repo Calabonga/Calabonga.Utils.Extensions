@@ -81,7 +81,7 @@ namespace Calabonga.Utils.Extensions.Tests
             // arrange
 
             // act
-            var sut = EnumHelper<TestType>.Parse("Значение");
+            var sut = EnumHelper<TestType>.Parse("Р—РЅР°С‡РµРЅРёРµ");
 
             // assert
             sut.ShouldBe(TestType.Value);
@@ -107,7 +107,7 @@ namespace Calabonga.Utils.Extensions.Tests
             // arrange
 
             // act
-            var sut = EnumHelper<TestType>.Parse("Не определено");
+            var sut = EnumHelper<TestType>.Parse("РќРµ РѕРїСЂРµРґРµР»РµРЅРѕ");
 
             // assert
             sut.ShouldBe(TestType.None);
@@ -120,7 +120,7 @@ namespace Calabonga.Utils.Extensions.Tests
             // arrange
 
             // act
-            var sut = EnumHelper<TestType>.Parse("Значение 2");
+            var sut = EnumHelper<TestType>.Parse("Р—РЅР°С‡РµРЅРёРµ 2");
 
             // assert
             sut.ShouldBe(TestType.Value);
@@ -141,11 +141,11 @@ namespace Calabonga.Utils.Extensions.Tests
 
         [Theory]
         [Trait("EnumHelper", "Parsing")]
-        [InlineData(TestType.Value, "Значение")]
-        [InlineData(TestType.Simple, "Простой")]
-        [InlineData(TestType.Simple, "Простой1")]
-        [InlineData(TestType.Simple, "Простой2")]
-        [InlineData(TestType.Simple, "Простой3")]
+        [InlineData(TestType.Value, "Р—РЅР°С‡РµРЅРёРµ")]
+        [InlineData(TestType.Simple, "РџСЂРѕСЃС‚РѕР№")]
+        [InlineData(TestType.Simple, "РџСЂРѕСЃС‚РѕР№1")]
+        [InlineData(TestType.Simple, "РџСЂРѕСЃС‚РѕР№2")]
+        [InlineData(TestType.Simple, "РџСЂРѕСЃС‚РѕР№3")]
         public void ItShould_parse_DisplayAttribute_Simple_as_string(TestType expected, string actual)
         {
             // arrange
@@ -160,9 +160,9 @@ namespace Calabonga.Utils.Extensions.Tests
 
         [Trait("EnumHelper", "Parsing")]
         [Theory]
-        [InlineData("Простой1")]
-        [InlineData("Простой2")]
-        [InlineData("Простой3")]
+        [InlineData("РџСЂРѕСЃС‚РѕР№1")]
+        [InlineData("РџСЂРѕСЃС‚РѕР№2")]
+        [InlineData("РџСЂРѕСЃС‚РѕР№3")]
         public void ItShould_parse_DisplayNamesAttribute_Simple(string actual)
         {
             // arrange

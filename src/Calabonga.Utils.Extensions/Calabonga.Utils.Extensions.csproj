@@ -3,7 +3,7 @@
   <PropertyGroup>
 	  <TargetFrameworks>netstandard2.1</TargetFrameworks>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.3</Version>
+	  <Version>1.1.0-beta.1</Version>
 	  <PackageIconUrl>https://www.calabonga.net/images/logo.png</PackageIconUrl>
 	  <PackageProjectUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</PackageProjectUrl>
 	  <PackageTags>calabonga, extensions, helpers, enum, string, integer</PackageTags>
@@ -14,8 +14,8 @@
 	  <Description>Some helful extensions for C# .NET. Package contains extensions (C#) that can simplify developer life.</Description>
 	  <Product>Some helpful extensions for C#.NET</Product>
 	  <PackageId>Calabonga.Utils.Extensions</PackageId>
-	  <PackageReleaseNotes>Package metadata refatored</PackageReleaseNotes>
-	  <Title>C#.NET Extensions from Calabonga SOFT</Title>
+	  <PackageReleaseNotes>Random(), Randomized(), LINQ-extenstions added</PackageReleaseNotes>
+	  <Title>Extensions for C#.NET</Title>
 	  <PackageIcon>logo.png</PackageIcon>
 	  <RepositoryUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
