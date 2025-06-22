@@ -3,7 +3,7 @@
   <PropertyGroup>
 	  <TargetFrameworks>netstandard2.1</TargetFrameworks>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.1.0</Version>
+	  <Version>1.2.0</Version>
 	  <PackageIconUrl>https://www.calabonga.net/images/logo.png</PackageIconUrl>
 	  <PackageProjectUrl>https://github.com/Calabonga/Calabonga.Utils.Extensions</PackageProjectUrl>
 	  <PackageTags>calabonga, extensions, helpers, enum, string, integer</PackageTags>

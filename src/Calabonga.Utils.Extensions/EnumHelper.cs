@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -15,6 +16,7 @@ namespace Calabonga.Utils.Extensions
         /// <summary>
         /// Returns Enum with DisplayNames
         /// </summary>
+        [DebuggerStepThrough]
         public static Dictionary<T, string> GetValuesWithDisplayNamesByMask(T enumValues)
         {
             var list = new Dictionary<T, string>();
@@ -35,6 +37,7 @@ namespace Calabonga.Utils.Extensions
         /// <summary>
         /// Returns Enum with DisplayNames
         /// </summary>
+        [DebuggerStepThrough]
         public static Dictionary<T, string> GetValuesWithDisplayNames()
         {
             var type = typeof(T);
@@ -50,6 +53,7 @@ namespace Calabonga.Utils.Extensions
         /// <summary>
         /// Returns values from enum
         /// </summary>
+        [DebuggerStepThrough]
         public static IList<T> GetValues()
         {
             return typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public)
@@ -63,6 +67,7 @@ namespace Calabonga.Utils.Extensions
         /// <param name="mask"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
+        [DebuggerStepThrough]
         public static IEnumerable<T> GetValues(Enum mask)
         {
             if (typeof(T).IsSubclassOf(typeof(Enum)) == false)
@@ -90,6 +95,7 @@ namespace Calabonga.Utils.Extensions
         /// Parse displayValue by string from Enum
         /// </summary>
         /// <param name="value"></param>
+        [DebuggerStepThrough]
         public static T Parse(string value)
         {
             var displayName = TryParseDisplayValue(value);
@@ -118,6 +124,7 @@ namespace Calabonga.Utils.Extensions
         /// </summary>
         /// <typeparam name="TAttribute"></typeparam>
         /// <param name="value"></param>
+        [DebuggerStepThrough]
         public static TAttribute TryGetFromAttribute<TAttribute>(string value)
             where TAttribute : Attribute
         {
@@ -133,6 +140,7 @@ namespace Calabonga.Utils.Extensions
         /// </summary>
         /// <typeparam name="TAttribute"></typeparam>
         /// <param name="value"></param>
+        [DebuggerStepThrough]
         public static TAttribute TryGetFromAttribute<TAttribute>(T value)
             where TAttribute : Attribute
         {
@@ -147,6 +155,7 @@ namespace Calabonga.Utils.Extensions
         /// Parse displayValue by string from Enum
         /// </summary>
         /// <param name="displayValue"></param>
+        [DebuggerStepThrough]
         public static T? TryParseDisplayValue(string displayValue)
         {
             var fieldInfos = typeof(T).GetFields();
@@ -200,6 +209,7 @@ namespace Calabonga.Utils.Extensions
         /// <summary>
         /// Returns values from Enum
         /// </summary>
+        [DebuggerStepThrough]
         public static IEnumerable<string> GetNames()
         {
             return typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public).Select(fi => fi.Name).ToList();
@@ -208,6 +218,7 @@ namespace Calabonga.Utils.Extensions
         /// <summary>
         /// Returns values from Enum or Resource file if exists
         /// </summary>
+        [DebuggerStepThrough]
         public static IList<string> GetDisplayValues()
         {
             return typeof(T).HasAttribute<FlagsAttribute>() ? default(IList<string>) : GetNames().Select(obj => GetDisplayValue(Parse(obj))).ToList();
@@ -231,6 +242,7 @@ namespace Calabonga.Utils.Extensions
         /// Returns display name for Enum
         /// </summary>
         /// <param name="value"></param>
+        [DebuggerStepThrough]
         public static string GetDisplayValue(T value)
         {
             var fieldInfo = value.GetType().GetField(value.ToString());
@@ -249,6 +261,7 @@ namespace Calabonga.Utils.Extensions
             return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
         }
 
+        [DebuggerStepThrough]
         public static IEnumerable<T> GetUniqueFlags(Enum flags)
         {
             if (!flags.HasAttribute<FlagsAttribute>())

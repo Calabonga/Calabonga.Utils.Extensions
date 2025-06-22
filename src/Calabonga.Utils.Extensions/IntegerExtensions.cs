@@ -8,13 +8,16 @@ namespace Calabonga.Utils.Extensions
     public static class IntegerExtensions
     {
         /// <summary>
-        /// Indicates whether the specified int is null or an zero
+        /// Indicates whether the specified int is null or a zero
         /// </summary>
         /// <param name="source">Value to check</param>
         /// <returns>
-        /// true if the value parameter is null or an zero; otherwise, false
+        /// true if the value parameter is null or a zero; otherwise, false
         /// </returns>
         [DebuggerStepThrough]
-        public static bool IsEmpty(this int? source) => source == default || source == 0;
+        public static bool IsEmpty(this int? source)
+        {
+            return source == null || source == 0;
+        }
     }
 }

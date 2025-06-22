@@ -40,11 +40,11 @@ namespace Calabonga.Utils.Extensions
                             || (t.PropertyType == typeof(string)));
 
             var items = from property in properties
-                let value = property.GetValue(entity)
-                where value != null && !string.IsNullOrEmpty(value.ToString())
-                select new Claim(
-                    claimsOptions.LowerCase ? property.Name.ToLower() : property.Name,
-                    value?.ToString());
+                        let value = property.GetValue(entity)
+                        where value != null && !string.IsNullOrEmpty(value.ToString())
+                        select new Claim(
+                            claimsOptions.LowerCase ? property.Name.ToLower() : property.Name,
+                            value?.ToString());
 
             result.AddRange(items);
             return result;
@@ -120,5 +120,13 @@ namespace Calabonga.Utils.Extensions
             return claims.FirstOrDefault(x => x.Value == claimType);
         }
 
+    }
+
+    public class ClaimsHelperOptions
+    {
+        /// <summary>
+        /// Generate claims names in lower case.
+        /// </summary>
+        public bool LowerCase { get; set; }
     }
 }
