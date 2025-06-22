@@ -3,6 +3,15 @@ Some helpful extensions for C#.NET. Package contains extensions (C#) that can si
 
 ## Change History
 
+## 1.2.0 2025-06-22
+
+There are new extensions for `DateTime` added:
+* `.ToJiraString()` => `1d 4h 34m 23s`
+* `.GetMonthStartDay()` => return the first day of the month
+* `.GetMonthStartDay()` => return the first day of the month
+* `.GetWeekStartDay()` => return the first day of the week
+* `.GetWeekEndDay()` => return the last day of the week
+
 ### 1.1.0
 
 * `Random()`, `Randomized()` and `Randoms()` method for LINQ released.
