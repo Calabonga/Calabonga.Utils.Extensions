@@ -1,9 +1,14 @@
 # Calabonga.Utils.Extensions
+
 Some helpful extensions for C#.NET. Package contains extensions (C#) that can simplify developer life.
 
 ## Change History
 
-## 1.2.0 2025-06-22
+### 1.3.0 2025-07-04
+
+* SemVer parsing and extraction from assembly added.
+
+### 1.2.0 2025-06-22
 
 There are new extensions for `DateTime` added:
 * `.ToJiraString()` => `1d 4h 34m 23s`
