@@ -54,7 +54,12 @@ namespace Calabonga.Utils.Extensions
         [DebuggerStepThrough]
         public static T ToEnum<T>(this string target, T defaultValue) where T : IComparable, IFormattable
         {
-            T convertedValue = defaultValue;
+            var convertedValue = defaultValue;
+
+            if (string.IsNullOrEmpty(target))
+            {
+                return convertedValue;
+            }
 
             if (string.IsNullOrEmpty(target))
             {
