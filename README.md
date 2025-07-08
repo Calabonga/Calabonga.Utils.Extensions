@@ -1,8 +1,16 @@
 # Calabonga.Utils.Extensions
 
-Some helpful extensions for C#.NET. Package contains extensions (C#) that can simplify developer life.
+Some helpful extensions for C#.NET. [Nuget-package](https://www.nuget.org/packages/Calabonga.Utils.Extensions) contains extensions (C#) that can simplify developer life.
 
 ## Change History
+
+### 1.5.0 2025-07-08
+
+* Custom `Regex` parsing for `SemanticVersion` added with some unit-tests.
+
+### 1.4.0 2025-07-07
+
+* SemVer parsing and extraction from assembly removed.
 
 ### 1.3.0 2025-07-04
 
