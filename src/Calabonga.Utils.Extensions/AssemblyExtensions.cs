@@ -24,9 +24,7 @@ namespace Calabonga.Utils.Extensions
             var version = FileVersionInfo.GetVersionInfo(source.Location).ProductVersion
                           ?? source.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
-            SemVersion.TryParse(version, SemVersionStyles.Any, out var versionResult);
-
-            return versionResult;
+            return SemVersion.TryParse(version, SemVersionStyles.Any, out var versionResult) ? versionResult : new SemVersion(0, 0, 0);
         }
 
         /// <summary>
