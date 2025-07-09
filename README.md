@@ -4,6 +4,11 @@ Some helpful extensions for C#.NET. [Nuget-package](https://www.nuget.org/packag
 
 ## Change History
 
+### 1.5.1 2025-07-09
+
+* Some extensions added for `SemanticVersion` display formats.
+* A few unit-tests added.
+
 ### 1.5.0 2025-07-08
 
 * Custom `Regex` parsing for `SemanticVersion` added with some unit-tests.
