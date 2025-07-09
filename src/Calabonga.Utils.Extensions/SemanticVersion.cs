@@ -55,5 +55,17 @@
         /// The metadata version part.
         /// </summary>
         public string? Metadata { get; }
+
+        public override string ToString()
+        {
+            if (string.IsNullOrEmpty(Prerelease))
+            {
+                return $"{Major}.{Minor}.{Patch}";
+            }
+
+            return $"{Major}.{Minor}.{Patch} {Prerelease}";
+        }
     }
+
+
 }

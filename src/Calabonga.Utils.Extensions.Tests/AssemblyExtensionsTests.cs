@@ -3,6 +3,42 @@
 public class AssemblyExtensionsTests
 {
     [Fact]
+    public void Test_MetadataVersion_FromString_toFullString_withoutMetadata()
+    {
+        const string versionString = "2.8.1-beta.11";
+        var version = versionString.GetSemanticVersion().ToFullString();
+
+        Assert.Equal("2.8.1 beta.11", version);
+    }
+
+    [Fact]
+    public void Test_MetadataVersion_FromString_toFullString_withMetadata()
+    {
+        const string versionString = "2.8.1-beta.11+088e43f9f7ddb580a81408eadabc114b6a7cd6bf";
+        var version = versionString.GetSemanticVersion().ToFullString();
+
+        Assert.Equal("2.8.1 beta.11 (088e43f)", version);
+    }
+
+    [Fact]
+    public void Test_MetadataVersion_FromString_toString()
+    {
+        const string versionString = "2.8.1+088e43f9f7ddb580a81408eadabc114b6a7cd6bf";
+        var version = versionString.GetSemanticVersion().ToString();
+
+        Assert.Equal("2.8.1", version);
+    }
+
+    [Fact]
+    public void Test_MetadataVersion_FromString_toString_withPrerelease()
+    {
+        const string versionString = "2.8.1-beta.1.2+088e43f9f7ddb580a81408eadabc114b6a7cd6bf";
+        var version = versionString.GetSemanticVersion().ToString();
+
+        Assert.Equal("2.8.1 beta.1.2", version);
+    }
+
+    [Fact]
     public void Test_MetadataVersion_FromString()
     {
         const string versionString = "2.8.1-beta.1.2+088e43f9f7ddb580a81408eadabc114b6a7cd6bf";

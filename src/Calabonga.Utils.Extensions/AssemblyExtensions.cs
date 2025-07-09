@@ -9,6 +9,16 @@ namespace Calabonga.Utils.Extensions
     /// </summary>
     public static class AssemblyExtensions
     {
+        public static string ToFullString(this SemanticVersion source)
+        {
+            if (string.IsNullOrEmpty(source.Metadata))
+            {
+                return source.ToString();
+            }
+
+            return $"{source} ({source.Metadata[..7]})";
+        }
+
         public static SemanticVersion GetSemanticVersion(this string? source)
         {
             if (string.IsNullOrEmpty(source))
