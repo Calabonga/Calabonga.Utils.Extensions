@@ -22,15 +22,11 @@ namespace Calabonga.Utils.Extensions
             var list = new Dictionary<T, string>();
             var items = GetValues(enumValues as Enum);
 
-            if (items is null)
-            {
-                return list;
-            }
-
             foreach (var element in items)
             {
                 list.Add(element, GetDisplayValue(element));
             }
+
             return list;
         }
 
@@ -51,6 +47,24 @@ namespace Calabonga.Utils.Extensions
         }
 
         /// <summary>
+        /// Returns Enum with DisplayNames
+        /// </summary>
+        [DebuggerStepThrough]
+        public static Dictionary<T, string> GetValuesWithDisplayNames(params T[] excludeValues)
+        {
+            var items = GetValuesWithDisplayNames();
+            if (excludeValues.Length > 0)
+            {
+                foreach (var excludeValue in excludeValues)
+                {
+                    items.Remove(excludeValue);
+                }
+            }
+
+            return items;
+        }
+
+        /// <summary>
         /// Returns values from enum
         /// </summary>
         [DebuggerStepThrough]
@@ -68,14 +82,14 @@ namespace Calabonga.Utils.Extensions
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerStepThrough]
-        public static IEnumerable<T> GetValues(Enum mask)
+        public static IEnumerable<T> GetValues(Enum? mask)
         {
             if (typeof(T).IsSubclassOf(typeof(Enum)) == false)
             {
                 throw new ArgumentException();
             }
 
-            foreach (T curValueBit in Enum.GetValues(typeof(T)).Cast<T>())
+            foreach (var curValueBit in Enum.GetValues(typeof(T)).Cast<T>())
             {
                 var value = curValueBit as Enum;
 
